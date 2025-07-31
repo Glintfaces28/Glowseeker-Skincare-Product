@@ -1,0 +1,91 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments / env files
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+*.env
+
+# Packaging / build outputs
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+
+# Databases (keep your local SQLite out of git)
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Tests / tooling caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+.mypy_cache/
+.pyright/
+
+# =========================
+# Node / React (frontend)
+# =========================
+node_modules/
+frontend/node_modules/
+
+# Frontend env and builds
+frontend/.env*
+frontend/build/
+frontend/dist/
+frontend/.parcel-cache/
+frontend/.vite/
+
+# Next/Vite (in case you add them later)
+.next/
+out/
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Logs (anywhere)
+# =========================
+*.log
+logs/
+log/
+
+# =========================
+# OS / Editor cruft
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.code-workspace
+
+# =========================
+# Misc scratch
+# =========================
+*.tmp
+*.swp
+*.swo
+*.local
+
+# =========================
+# Netlify (optional)
+# =========================
+.netlify/
