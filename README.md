@@ -83,5 +83,6 @@ npm start
 ## License
 
 MIT License. See the [LICENSE](LICENSE) file for details.
+**"Update README with API and Scripts info"**.
 
 
