@@ -1,53 +1,25 @@
-# Glowseeker Skincare Product
+🌟 Glowseeker Skincare Product
+A simple full‑stack web application for browsing skincare products.
+Built with:
 
-A simple full‑stack app:
+.Backend: FastAPI + SQLModel + SQLite
+.Frontend: React (Create React App)
 
-- **Backend:** FastAPI + SQLModel + SQLite  
-- **Frontend:** React (Create React App)
+🚀 Features
 
----
+📦 Product listing with name, price, and size
+🔍 View detailed information for each product
+⚡ Fast API responses using FastAPI
+🎨 Modern, responsive React frontend
 
-## Local Development
+🛠️ Project Structure
 
-### 1) Backend (FastAPI)
-
-From the repo root:
-
-```bash
-# Create and activate venv (Windows PowerShell)
-python -m venv venv
-.\venv\Scripts\activate
-
-# Install deps
-pip install -r Backend/requirements.txt
-
-# Run the API (reload for dev)
-cd Backend
-uvicorn main:app --reload
-# API at http://127.0.0.1:8000
-# Swagger docs at http://127.0.0.1:8000/docs
-
-2) Frontend (React)
-In a second terminal:
-cd frontend
-npm install
-
-# Point the frontend to the API (optional if your API runs on 127.0.0.1:8000)
-# Create a .env file in /frontend/ with:
-# REACT_APP_API_URL=http://127.0.0.1:8000
-
-# Start the dev server
-npm start
-
-# React app at http://localhost:3000
-Project Structure
-
-3)Glowseeker-Skincare-Product/
+Glowseeker-Skincare-Product/
 ├─ Backend/
-│  ├─ main.py
-│  ├─ models.py
-│  ├─ database.py
-│  └─ requirements.txt
+│  ├─ main.py            # API entry point
+│  ├─ models.py          # Database models
+│  ├─ database.py        # Database setup
+│  ├─ requirements.txt   # Python dependencies
 ├─ frontend/
 │  ├─ public/
 │  └─ src/
@@ -56,33 +28,39 @@ Project Structure
 ├─ package-lock.json
 └─ README.md
 
-## API Endpoints (examples)
+1️⃣ Backend (FastAPI)
 
-- **GET** `/products` → list all products  
-- **GET** `/products/{id}` → fetch details for a single product  
-
-Open **Swagger UI** for testing the API endpoints at:  
-`http://127.0.0.1:8000/docs`  
-
----
-
-## Scripts (common)
-
-### Backend
-```bash
-# From repo root
-.\venv\Scripts\activate
+# Create and activate a virtual environment
+python -m venv venv
+.\venv\Scripts\activate   # Windows
+# source venv/bin/activate  # Mac/Linux
+# Install dependencies
+pip install -r Backend/requirements.txt
+# Run the API server
 cd Backend
 uvicorn main:app --reload
+📌 API will run at: http://127.0.0.1:8000
+📌 Swagger UI (API docs): http://127.0.0.1:8000/docs
+
+2️⃣ Frontend (React)
+In a second terminal:
 
 cd frontend
+npm install
+# Optional: create a .env file with API URL
+echo REACT_APP_API_URL=http://127.0.0.1:8000 > .env
+# Start the frontend
 npm start
 
----
+📡 API Endpoints
+Method	Endpoint	Description
+GET	/products	List all products
+GET	/products/{id}	Get details of a product
 
-## License
+📜 License
+This project is licensed under the MIT License – see the LICENSE file for details.
 
-MIT License. See the [LICENSE](LICENSE) file for details.
-**"Update README with API and Scripts info"**.
+
+
 
 
