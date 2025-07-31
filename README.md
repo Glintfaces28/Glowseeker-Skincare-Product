@@ -51,11 +51,15 @@ npm install
 echo REACT_APP_API_URL=http://127.0.0.1:8000 > .env
 # Start the frontend
 npm start
+# React app available at: http://localhost:3000
+
 
 📡 API Endpoints
 Method	Endpoint	Description
 GET	/products	List all products
 GET	/products/{id}	Get details of a product
+Swagger UI is available at:
+http://127.0.0.1:8000/docs
 
 📜 License
 This project is licensed under the MIT License – see the LICENSE file for details.
