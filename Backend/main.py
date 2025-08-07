@@ -21,9 +21,27 @@ def startup():
     with Session(engine) as session:
         if not session.exec(select(Product)).first():
             products = [
-                Product(name="Glowseeker Body Cream", description="Hydrating cream", price=19.99, size="500ml"),
-                Product(name="Glowseeker Cleanser", description="Gentle face wash", price=12.99, size="400ml"),
-                Product(name="Glowseeker Serum", description="Brightening serum", price=24.99, size="150ml")
+                Product(
+                    name="Glowseeker Body Cream", 
+                    description="Hydrating cream", 
+                    price=19.99, 
+                    size="500ml",
+                    ingredients=["Aqua", "Glycerin", "Shea Butter", "Vitamin E", "Hyaluronic Acid"]
+                ),
+                Product(
+                    name="Glowseeker Cleanser", 
+                    description="Gentle face wash", 
+                    price=12.99, 
+                    size="400ml",
+                    ingredients=["Aqua", "Sodium Cocoyl Glutamate", "Chamomile Extract", "Aloe Vera", "Vitamin B5"]
+                ),
+                Product(
+                    name="Glowseeker Serum", 
+                    description="Brightening serum", 
+                    price=24.99, 
+                    size="150ml",
+                    ingredients=["Aqua", "Niacinamide", "Vitamin C", "Retinol", "Peptides", "Argan Oil"]
+                )
             ]
             session.add_all(products)
             session.commit()
