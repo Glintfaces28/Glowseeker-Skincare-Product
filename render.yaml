@@ -1,0 +1,47 @@
+services:
+  # PostgreSQL Database
+  - type: pserv
+    name: glowseeker-db
+    env: docker
+    plan: free
+    dockerfilePath: ./Glowseeker-Shared-InO/db/Dockerfile.render
+    envVars:
+      - key: POSTGRES_DB
+        value: glowseeker
+      - key: POSTGRES_USER
+        value: glowseeker_user
+      - key: POSTGRES_PASSWORD
+        generateValue: true
+
+  # Backend API
+  - type: web
+    name: glowseeker-backend
+    env: docker
+    plan: free
+    dockerfilePath: ./Glowseeker-Shared-InO/backend/Dockerfile
+    envVars:
+      - key: DATABASE_URL
+        fromService:
+          type: pserv
+          name: glowseeker-db
+          property: connectionString
+    healthCheckPath: /
+
+  # Frontend React App
+  - type: web
+    name: glowseeker-frontend
+    env: docker
+    plan: free
+    dockerfilePath: ./Glowseeker-Shared-InO/frontend/Dockerfile
+    envVars:
+      - key: REACT_APP_API_URL
+        fromService:
+          type: web
+          name: glowseeker-backend
+          property: host
+
+databases:
+  - name: glowseeker-postgres
+    databaseName: glowseeker
+    user: glowseeker_user
+    plan: free
