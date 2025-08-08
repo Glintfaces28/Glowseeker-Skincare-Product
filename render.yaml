@@ -10,7 +10,6 @@ services:
         fromDatabase:
           name: glowseeker-postgres
           property: connectionString
-    healthCheckPath: /
 
   # Frontend React App
   - type: web
@@ -29,5 +28,3 @@ databases:
   - name: glowseeker-postgres
     databaseName: glowseeker
     user: glowseeker_user
-    plan: free
-    postInitScript: ./Glowseeker-Shared-InO/db/initdb.d/init.sql
